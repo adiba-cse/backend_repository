@@ -4,8 +4,6 @@ const Model = require('../models/papermodels')
 router.get('/home', (req, res) => {
     console.log('Request at user home');
     res.send('request processed at home');
-
-
 })
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -18,12 +16,8 @@ router.post('/add', (req, res) => {
             console.error(err);
             res.json(err)
         })
-
-
-
 })
 router.get('/getbyuser/:userid', (req, res) => {
-    // console.log(req.body);
     Model.find({ user: req.params.userid }).populate('answers')
         .then((data) => {
             console.log('user data saved');
@@ -34,10 +28,7 @@ router.get('/getbyuser/:userid', (req, res) => {
             res.json(err)
         })
 })
-
-
 router.get('/getbyid/:id', (req, res) => {
-    // console.log(req.body);
     Model.findById(req.params.id)
         .then((data) => {
             console.log('paper data saved');
@@ -63,7 +54,6 @@ router.put('/pushupdate/:id', (req, res) => {
 })
 
 router.delete('/delete/:id', (req, res) => {
-    // console.log(req.body);
     Model.findByIdAndDelete(req.params.id)
         .then((data) => {
             console.log('paper data deleted');

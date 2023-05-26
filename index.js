@@ -16,7 +16,7 @@ app.use(express.static('./uploads/'))
 
 app.get('/home', (req, res) => {
     console.log('Received Request');
-    res.send('Welcome to home sweet home');
+    res.send('Welcome ');
 
 })
 app.listen(port, () => {

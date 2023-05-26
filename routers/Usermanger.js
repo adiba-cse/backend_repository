@@ -18,9 +18,6 @@ router.post('/add',(req ,res )=>{
         console.error(err);
         res.json(err)
     })
-  
-
-
 })
 router.get('/getbyemail/:useremail',(req ,res )=>{
    // console.log(req.body);
@@ -33,11 +30,6 @@ Model.findOne({email:req.params.useremail})
         console.error(err);
         res.json(err)
     })
-  
-
 
 })
-
-
-
 module.exports=router

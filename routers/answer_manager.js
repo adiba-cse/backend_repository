@@ -4,8 +4,6 @@ const Model = require('../models/answer_model')
 router.get('/home', (req, res) => {
     console.log('Request at user home');
     res.send('request processed at home');
-
-
 })
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -18,13 +16,7 @@ router.post('/add', (req, res) => {
             console.error(err);
             res.json(err)
         })
-
-
-
 })
-
-
-
 router.get('/getbypaper/:paperid', (req, res) => {
     // console.log(req.body);
     Model.find({ paper: req.params.paperid })
@@ -36,10 +28,5 @@ router.get('/getbypaper/:paperid', (req, res) => {
             console.error(err);
             res.json(err)
         })
-
-
-
 })
-
-
 module.exports = router
